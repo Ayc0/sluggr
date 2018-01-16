@@ -1,4 +1,20 @@
 /**
+ * If string.normalize if defined, use it to transform è -> e for instance
+ * And set the string in lowercase
+ * @param {string} string
+ * @return {string}
+ */
+const normalize = string => {
+  if (String.prototype.normalize) {
+    return string
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0080-\uffff]/g, '');
+  }
+  return string.toLowerCase();
+};
+
+/**
  * Regex for whitespaces
  * @param {string} char
  * @param {string[]} whitelist
@@ -20,8 +36,7 @@ const reTrim = char => new RegExp(`^\\${char}|\\${char}$`, 'g');
  * @return {reTrim}
  */
 const sluggr = (char = '_', whitelist = '') => string =>
-  string
-    .toLowerCase()
+  normalize(string)
     .replace(reWhitespace(char, whitelist.split('')), char)
     .replace(reTrim(char), '');
 
