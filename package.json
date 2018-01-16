@@ -1,0 +1,22 @@
+{
+  "name": "sluggr",
+  "version": "1.0.0",
+  "description": "JS light slugger",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ayc0/sluggr.git"
+  },
+  "keywords": [
+    "js",
+    "slug",
+    "slugger"
+  ],
+  "author": "Ayc0",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ayc0/sluggr/issues"
+  },
+  "homepage": "https://github.com/Ayc0/sluggr#readme"
+}
