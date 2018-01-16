@@ -1,0 +1,2 @@
+# sluggr
+JS light slugger
