@@ -10,6 +10,6 @@ const sluggr = require('sluggr');
 // sluggr(char = "_", whitelist = "")
 const slugger = sluggr("-", ":;");
 
-slug("WDAè: ô*")
-> wdae:-o
+> slugger("WDAè: ô*")
+"wdae:-o"
 ```
