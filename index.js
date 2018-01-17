@@ -9,7 +9,7 @@ const normalize = string => {
     return string
       .toLowerCase()
       .normalize('NFD')
-      .replace(/[\u0080-\uffff]/g, '');
+      .replace(/[\u0300-\u036f]/g, '');
   }
   return string.toLowerCase();
 };
@@ -20,7 +20,7 @@ const normalize = string => {
  * @param {string[]} whitelist
  * @return {string}
  */
-const reWhitespace = (char, whitelist = []) => new RegExp(`([^${whitelist.map(element => `\\${element}`).join('')}a-zA-Z0-9\\${char}]|\\${char})+`, 'g');
+const reWhitespace = (char, whitelist = []) => new RegExp(`([^${whitelist.map(element => `\\${element.toLowerCase()}`).join('')}a-zA-Z0-9\\${char}]|\\${char})+`, 'g');
 
 /**
  * Regex for trim
