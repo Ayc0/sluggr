@@ -1,6 +1,6 @@
 {
   "name": "sluggr",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "JS light slugger",
   "main": "index.js",
   "types": "index.d.ts",
