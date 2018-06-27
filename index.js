@@ -4,8 +4,8 @@
  * @param {string} string
  * @return {string}
  */
-const normalize = string => {
-  if (String.prototype.normalize) {
+const normalize = (string, shouldNormalize) => {
+  if (String.prototype.normalize && shouldNormalize) {
     return string
       .toLowerCase()
       .normalize('NFD')
@@ -35,8 +35,8 @@ const reTrim = char => new RegExp(`^\\${char}|\\${char}$`, 'g');
  * @param {string} whitelist Whitelist of special characters allowed
  * @return {reTrim}
  */
-const sluggr = (char = '_', whitelist = '') => string =>
-  normalize(string)
+const sluggr = (char = '_', whitelist = '', shouldNormalize = true) => string =>
+  normalize(string, shouldNormalize)
     .replace(reWhitespace(char, whitelist.split('')), char)
     .replace(reTrim(char), '');
 
